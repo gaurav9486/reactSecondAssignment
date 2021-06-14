@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { blogData, filterData } from "./utils/commonData";
+import moment from "moment";
 
 const App = () => {
   const [filters, setFilters] = useState([]);
@@ -61,7 +62,7 @@ const App = () => {
                   <h4>{title}</h4>
                   <p className="publish-details">
                     {authorname}
-                    <span> | {posted_on.slice(0, 10)}</span>
+                    <span> | {moment(posted_on).format("DD MMM YYYY")}</span>
                   </p>
                   <p className="blog-desc">{description}</p>
                 </div>
